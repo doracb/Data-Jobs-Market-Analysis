@@ -34,7 +34,7 @@ plt.show()
 
 ### Results
 
-![Visualization of Top Skills](Images\skill_demand_all_data_roles.png)
+![Visualization of Top Skills](./Images/skill_demand_all_data_roles.png)
 
 ### Insights
 - Python is a good skill to have for its overall versatility, but not the most in demand for these particular roles.
