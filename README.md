@@ -37,8 +37,8 @@ plt.show()
 ![Visualization of Top Skills](./Images/skill_demand_all_data_roles.png)
 
 ### Insights
-- Python is a good skill to have for its overall versatility, but not the most in demand for these particular roles.
-- SQL is the most requested skill with the exception of Data Analysts, where Excel wins by a small margin.
-- Data Engineers require heavy cloud infrastructure stack skills (Azure, AWS, Databricks), while analysts focus on BI dashboards and reporting (Excel, Power BI, Tableau, SAS).
-- Power BI and Tableau seem to be equally as important. Chosing to focus on one of them instead of attempting to master both can be a good idea.
-- Data Scientists are not in the top 3 most popular data roles in Romania yet. Their absence here indicates that the Romanian data market is more focused on business intelligence.
+- **Python** is a good skill to have for its overall versatility, but not the most in demand for these particular roles.
+- **SQL** is the most requested skill with the exception of Data Analysts, where **Excel** wins by a small margin.
+- **Data Engineers** require heavy cloud infrastructure stack skills (Azure, AWS, Databricks), while analysts focus on BI dashboards and reporting (Excel, Power BI, Tableau, SAS).
+- **Power BI** and **Tableau** seem to be equally as important. Chosing to focus on one of them instead of attempting to master both can be a good idea.
+- **Data Scientists** are not in the top 3 most popular data roles in Romania yet. Their absence here indicates that the Romanian data market is more focused on business intelligence.
