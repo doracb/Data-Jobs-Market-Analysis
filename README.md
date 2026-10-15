@@ -1,3 +1,18 @@
+# Overview
+
+This is my analysis of the data job market, with a focus on data analyst roles. This project was created out of a desire to better understand the job market and to help find optimal job opportunities for data analysts.
+
+I used the data from [Luke Barousse's Python Course](https://www.lukebarousse.com/python) as a foundation for this analysis. The dataset contains detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explored key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
+
+# The Questions
+
+These are the questions I aim to answer in this project:
+
+1. What are the most demanded skills for the top 3 most popular data roles in Romania?
+2. How are in-demand skills trending for Data Analysts?
+3. How well do jobs and skills pay for Data Analysts?
+4. What are the optimal skills for data analysts to learn? (High Demand AND High Paying)
+
 # The Analysis
 
 ## 1. What are the most demanded skills for the top 3 most popular data roles in Romania?
@@ -71,6 +86,9 @@ plt.show()
 - It's hard to tell if **Power BI** or **Tableau** is better considering how much they fluctuate in importance. Overall, they are similar.
 
 ## 3. How well do jobs and skills pay for Data Analysts?
+To identify the highest-paying roles and skills, I selected the jobs only in Romania and looked at their median salary. Before that, I also looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most.
+
+View my notebook with the detailed steps for this section here: [4_Salary_Analysis.ipynb](4_Salary_Analysis.ipynb)
 
 ### A Salary Analysis
 
@@ -123,3 +141,31 @@ plt.show()
 - There is significant overlap between the two lists. High-paying enterprise tech like **JavaScript, SAP, Azure,** and **Spark** also feature prominently among the most common skills, showing that Romanian employers actively pay top dollar for infrastructure and web-data-capable analysts.
 - Core analysis tools like Excel, VBA, and PowerPoint are the backbone of the market, but cluster near the lower end of the median salary spectrum (around $56K USD). They are fundamental, but mastering them alone yields lower compensation ceiling compared to cloud and software platforms.
 - General-purpose programming languages like **JavaScript** (~$110K) and **Go** (~$52K) show varying salary medians, while **Python** sits around $48K USD in median salary for analyst positions. This suggests that Data Analysts that incorporate web scripting/full-stack data integration or backend data tools see higher compensation than entry-level Python script users.
+
+## 4. What are the optimal skills for data analysts to learn? (High Demand AND High Paying)
+
+To identify the most optimal skills to learn ( the highest paid and highest in demand), I calculated the percent of skill demand and the median salary of these skills.
+
+View my notebook with the detailed steps here: [5_Best_Skill.ipynb](5_Best_Skill.ipynb)
+
+### Visualize Data:
+```python
+from adjustText import adjust_text
+import matplotlib.pyplot as plt
+
+plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
+plt.show()
+```
+
+### Results:
+![The Optimal Skills to Learn](./Images/most_optimal_skills.png)
+*A scatter plot visualizing the optimal skills (high paying & high demand) for Data Analysts in Romania.*
+
+### Data Limitations & Transparency Note
+Unlike broader international markets (such as the US), a majority of job postings in Romania do not publicly disclose salary ranges. While the **demand percentage** reliably reflects market popularity across the full dataset, **salary metrics** should be interpreted as indicators for specialized premium compensation rather than guaranteed base averages.
+
+### Insights:
+- **SAP** sits at the top right of the matrix (~42% demand, ~$89K USD salary), making it the #1 most optimal skill for high-earning Data Analysts in Romania.
+- **Spark** also provides high compensation (~$89K USD) with strong market demand (~33%), showing that analysts with big data/engineering crossover capabilities command premium pay.
+- **Excel** also leads in job availability, making it essential for entering the market. However, its compensation ceiling (~$57K USD) is on the lower side.
+- **Python** and **Go** sit in the lower-left quadrant (only ~17% demand, ~$48K–$52K USD). In the Romanian job market, standard Data Analyst roles lean more heavily on BI and database tools than standalone programming languages.
