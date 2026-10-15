@@ -7,7 +7,7 @@ To find the most in demand skills for the top 3 most popular data roles, I filte
 You can view my notebook with the detailed steps here: [2_Skills_Count.ipynb](2_Skills_Count.ipynb)
 
 ### Visualize Data:
-```
+```python
 fig, ax = plt.subplots(len(job_titles), 1)
 
 sns.set_theme(style="whitegrid", palette="flare")
@@ -49,7 +49,7 @@ It's important to know whether the most common skills for Data Analysts are grow
 You can view the detailed steps for this analysis here: [3_Skills_Trend.ipynb](3_Skills_Trend.ipynb)
 
 ### Visualize Data:
-```
+```python
 from matplotlib.ticker import PercentFormatter
 
 df_plot = df_DA_RO_perc.iloc[:, :5]
@@ -68,4 +68,58 @@ plt.show()
 ### Insights:
 - **SQL** was the most consistently demanded skill throughout 2023.
 - All skills showed an increase in demand at the end of the year except for **Excel**, which had an unexpected drop around December.
-- It's hard to tell if **Power BI** or **Tableau** is better considering how much they fluctuate in importance. Overall, they are similar. 
+- It's hard to tell if **Power BI** or **Tableau** is better considering how much they fluctuate in importance. Overall, they are similar.
+
+## 3. How well do jobs and skills pay for Data Analysts?
+
+### A Salary Analysis
+
+### Visualize Data:
+```python
+sns.boxplot(data=df_RO_top6, x='salary_year_avg', y='job_title_short', order = job_order)
+sns.set_theme(style='ticks')
+
+plt.title('Salary Distribution in Romania')
+plt.xlabel('Yearly Salary (USD)')
+plt.ylabel('')
+plt.xlim(0, 600000)
+ticks_x = plt.FuncFormatter(lambda x, pos: f'${int(x/1000)}K')
+plt.gca().xaxis.set_major_formatter(ticks_x)
+plt.show()
+```
+
+### Results:
+![Salary Distributions of Data Jobs in Romania](./Images/salary_boxplot.png)
+*Box plot visualizing the salary distributions for the top 6 data job titles.*
+
+### Insights:
+- **Software Engineer** salary distributions have the widest spread, spanning from roughly $60K up to $190K USD. This high variance can have many causes such as company size, experience levels, or remote B2B/contracting opportunities common in Romania.
+- **Machine Learning Engineer** and **Software Engineer** roles have higher median salaries compared to analytical roles. ML Engineers show a consistently high base salary range (clustering tightly around $130K–$160K USD).
+- **Data Engineers** enjoy a solid salary floor starting around $80K USD, outearning baseline **Data Analysts** (with a median around $75K USD). This aligns with earlier findings showing Data Engineers require more specialized cloud and technical stacks.
+- Moving from **Data Analyst** to **Senior Data Analyst** or pivoting to **Data Scientist** nearly doubles the median earning potential, raising base expectations from around $75K USD toward $110K–$125K USD.
+- Regarding outliers, the **Senior Data Analyst** data shows a high outlier reaching near $200K USD, which could reflect specialized international or remote consulting contracts within Romania. The **Data Engineer** section also features a low outlier near $45K USD, pointing to entry-level or non-standard localized postings.
+
+### Highest Paid & Most Demanded Skills for Data Analysts
+
+### Visualize Data:
+```python
+fig, ax = plt.subplots(2, 1)
+
+# Top 10 highest paying skills for Data Analysts in Romania
+sns.barplot(data=df_DA_top_pay, x='median', y=df_DA_top_pay.index, hue='median', ax=ax[0], palette='dark:b_r')
+
+# Top 10 most common skills for Data Analysts in Romania
+sns.barplot(data=df_DA_skills, x='median', y=df_DA_skills.index, hue='median', ax=ax[1], palette='light:b')
+
+plt.show()
+```
+
+### Results:
+![The Highest Paid & Most Demanded Skills for Data Analysts in Romania](./Images/highest_paid_and_most_demanded_skills_for_data_analysts.png)
+*Two separate bar graphs visualizing the highest paid skills and most in-demand skills for data analysts in Romania.*
+
+### Insights:
+- More niche skills like **JavaScript** and **Tableau** top the chart around $110K USD, followed closely by enterprise and big data platforms like **Oracle, Azure, Spark,** and **SAP**. Specialized skills carry a distinct premium over traditional office tools.
+- There is significant overlap between the two lists. High-paying enterprise tech like **JavaScript, SAP, Azure,** and **Spark** also feature prominently among the most common skills, showing that Romanian employers actively pay top dollar for infrastructure and web-data-capable analysts.
+- Core analysis tools like Excel, VBA, and PowerPoint are the backbone of the market, but cluster near the lower end of the median salary spectrum (around $56K USD). They are fundamental, but mastering them alone yields lower compensation ceiling compared to cloud and software platforms.
+- General-purpose programming languages like **JavaScript** (~$110K) and **Go** (~$52K) show varying salary medians, while **Python** sits around $48K USD in median salary for analyst positions. This suggests that Data Analysts that incorporate web scripting/full-stack data integration or backend data tools see higher compensation than entry-level Python script users.
