@@ -38,6 +38,7 @@ First, I decided to have a look at the broader landscape of the Data Analyst job
 The market is heavily concentrated in the capital, with Bucharest exceeding 400 job postings. This is followed by flexible options ("Anywhere" and generic "Romania" postings) and major IT hubs like Cluj-Napoca and Timișoara, while cities like Iași and Brașov have significantly fewer listings.
 
 ![Counts of Job Locations](./Images/counts_of_job_locations.png)
+
 *Bar chart displaying the distribution of job locations for Data Analyst roles in Romania.*
 
 ### Work Conditions, Education, and Benefits
@@ -47,6 +48,7 @@ Next, I explored the working conditions and base requirements:
 * **Health Insurance:** The data shows that none of the jobs offer health insurance. This is easily explained by the fact that public health insurance is mandatory by law and automatically deducted from the gross salary in Romania. Furthermore, tech companies typically offer private medical clinic subscriptions as a standard benefit, which is likely not captured under the classic "Health Insurance" tag in this dataset.
 
 ![Work Conditions and Requirements](./Images/work_conditions_and_requirements.png)
+
 *Pie charts illustrating the percentage of jobs offering work from home, requiring a degree, and providing health insurance.*
 
 ### Top Hiring Companies
@@ -120,6 +122,7 @@ plt.show()
 
 ### Results:
 ![Trending Top Skills for Data Analysis in Romania](./Images/skill_trend_DA.png)
+
 *Bar graph visualizing the trending top skills for data analysts in Romania in 2023.*
 
 ### Insights:
@@ -150,6 +153,7 @@ plt.show()
 
 ### Results:
 ![Salary Distributions of Data Jobs in Romania](./Images/salary_boxplot.png)
+
 *Box plot visualizing the salary distributions for the top 6 data job titles.*
 
 ### Insights:
@@ -176,6 +180,7 @@ plt.show()
 
 ### Results:
 ![The Highest Paid & Most Demanded Skills for Data Analysts in Romania](./Images/highest_paid_and_most_demanded_skills_for_data_analysts.png)
+
 *Two separate bar graphs visualizing the highest paid skills and most in-demand skills for data analysts in Romania.*
 
 ### Insights:
@@ -201,6 +206,7 @@ plt.show()
 
 ### Results:
 ![The Optimal Skills to Learn](./Images/most_optimal_skills.png)
+
 *A scatter plot visualizing the optimal skills (high paying & high demand) for Data Analysts in Romania.*
 
 ### Data Limitations & Transparency Note
