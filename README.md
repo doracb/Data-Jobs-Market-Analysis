@@ -1,6 +1,6 @@
 # Overview
 
-This is my analysis of the data job market, with a focus on data analyst roles. This project was created out of a desire to better understand the job market and to help find optimal job opportunities for data analysts.
+This is my analysis of the data job market, with a focus on data analyst roles. This project was created out of a desire to better understand the job market and to help find optimal job opportunities for data analysts.a
 
 I used the data from [Luke Barousse's Python Course](https://www.lukebarousse.com/python) as a foundation for this analysis. The dataset contains detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explored key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
 
@@ -120,7 +120,7 @@ plt.show()
 
 ### Results:
 ![Trending Top Skills for Data Analysis in Romania](./Images/skill_trend_DA.png)
-*Bar graph visualizing the trending top skills for data analysts in the US in 2023.*
+*Bar graph visualizing the trending top skills for data analysts in Romania in 2023.*
 
 ### Insights:
 - **SQL** was the most consistently demanded skill throughout 2023.
